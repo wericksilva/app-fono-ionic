@@ -1,0 +1,42 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding  >
+
+
+
+  <div class="jumbotron, cabecalho_login">
+    <h1 class="display-3">Ola, seja Bem vindo!</h1>
+    <p class="lead">Esse app e para você praticar as atividades da fono, criado por <b>Dra. Samanta</b></p>
+    <hr class="my-4">
+  </div>
+
+  <ion-list class="form_login" >
+
+
+    <ion-item>
+      <ion-input type="text" placeholder="usuário"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="password" placeholder="senha"></ion-input>
+    </ion-item>
+
+    <button ion-button full (click)="vaiParatabPage()">Fazer login</button>
+    <ion-label>Ainda não tem uma conta?</ion-label>
+    <a (click)="vaiParaCadastro()">Criar conta</a>
+  </ion-list>
+
+</ion-content>
