@@ -13,8 +13,7 @@
     "lint": "ionic-app-scripts lint",
     "ionic:build": "ionic-app-scripts build",
     "ionic:serve": "ionic-app-scripts serve",
-    "postinstall": "ionic-app-scripts build",
-    "start": "node app.js"
+    "postinstall": "ionic-app-scripts build"
   },
   "dependencies": {
     "@angular/common": "4.1.3",
