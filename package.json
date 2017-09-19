@@ -4,6 +4,9 @@
   "author": "Ionic Framework",
   "homepage": "http://ionicframework.com/",
   "private": true,
+  "bin": {
+    "ionic-app-scripts": "./bin/ionic-app-scripts.js"
+  },
   "scripts": {
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
@@ -34,10 +37,7 @@
   },
   "devDependencies": {
     "@ionic/app-scripts": "2.1.4",
-    "typescript": "2.3.4",
-    "npm": "3.10.10",
-    "node": "6.9.5"
-
+    "typescript": "2.3.4"
   },
   "description": "An Ionic project"
 }
