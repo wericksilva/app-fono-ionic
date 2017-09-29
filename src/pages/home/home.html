@@ -5,9 +5,44 @@
 </ion-header>
 
 <ion-content padding>
-  <h2>Bem vindo ao novo app Fono</h2>
-  <p>
-    Esse app e para ajudar nas atividades da fono.
-  </p>
+  
+    <ion-card *ngFor="let filme of lista_pacientes"> 
+        
+      <ion-item>
+        
+              <ion-avatar item-start>
+                <img src="assets/imagens/foto_usuario_tem.png">
+              </ion-avatar>
+              <h2> {{ filme.nome }} </h2>
+              <p class="feed_date">teste</p>
+            </ion-item>
+        
+           
+        
+            <ion-card-content>
+              <p>teste</p>
+            </ion-card-content>
+        
+            <ion-row>
+              <ion-col>
+                <button ion-button icon-left clear small>
+                <ion-icon name="thumbs-up"></ion-icon>
+                <div>teste Likes</div>
+              </button>
+              </ion-col>
+              <ion-col>
+                <button ion-button icon-left clear small>
+                <ion-icon name="text"></ion-icon>
+                <div>teste Comments</div>
+              </button>
+              </ion-col>
+              <ion-col center text-center>
+                <ion-note>
+                    teste
+                </ion-note>
+              </ion-col>
+            </ion-row>
+        
+        </ion-card>
  
 </ion-content>
