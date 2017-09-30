@@ -22,10 +22,14 @@ export class CadastroContaPage {
     console.log('ionViewDidLoad CadastroContaPage');
   }
 
+ 
+  cadastrar() {
 
-  showAlert() {
+
+
+    
     let alert = this.alertCtrl.create({
-      title: 'Sucesso!',
+      title: 'OK!!',
       subTitle: 'Seu Cadastro foi realizado com sucesso!',
       buttons: ['OK']
     });

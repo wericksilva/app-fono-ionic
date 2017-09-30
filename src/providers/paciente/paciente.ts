@@ -17,7 +17,7 @@ export class PacienteProvider {
     console.log('Hello PacienteProvider Provider');
   }
 
-  getLatestMoovies() {
+  getTodosPacientes() {
     return this.http.get(this.baseApiPath);
   }
 

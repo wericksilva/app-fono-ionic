@@ -12,6 +12,8 @@ import { PacienteProvider } from '../../providers/paciente/paciente';
 })
 export class HomePage {
 
+  
+
   public lista_pacientes = new  Array<any>();
   
     public nome_usuario: string = "werick silva ";
@@ -23,7 +25,7 @@ export class HomePage {
   }
   
  ionViewDidLoad() {
-    this.pacienteProvider.getLatestMoovies().subscribe(data=>{
+    this.pacienteProvider.getTodosPacientes().subscribe(data=>{
       const response = (data as any);
       const objeto_retorno = JSON.parse(response._body);
       this.lista_pacientes = objeto_retorno;

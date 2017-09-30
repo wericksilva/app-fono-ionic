@@ -15,11 +15,10 @@
 
 <ion-content padding>
 
-  <ion-list class="form_cadastro">
-
-
+  <ion-list class="form_cadastro" >
+    
     <ion-item>
-      <ion-input type="text" placehomeolder="Nome" required></ion-input>
+      <ion-input type="text" placeholder="nome"></ion-input>
     </ion-item>
 
     <ion-item>
@@ -34,6 +33,12 @@
       <ion-input type="text" placeholder="email"></ion-input>
     </ion-item>
     <ion-item>
+      <ion-input type="password" placeholder="senha"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="password" placeholder="confirmar senha"></ion-input>
+    </ion-item>
+    <ion-item>
       <ion-input type="text" placeholder="telefone"></ion-input>
     </ion-item>
     <ion-item>
@@ -42,7 +47,7 @@
     </ion-item>
 
 
-    <button ion-button full class="btn_cadastro" (click)="showAlert()">Cadastrar</button>
+    <button ion-button full class="btn_cadastro" (click)="cadastrar()">Cadastrar</button>
 
   </ion-list>
 
