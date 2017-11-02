@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { PacienteProvider } from '../../providers/paciente/paciente';
+import { LoginPage } from '../login/login';
 
 /**
  * Generated class for the CadastroContaPage page.
@@ -12,10 +14,16 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 @Component({
   selector: 'page-cadastro-conta',
   templateUrl: 'cadastro-conta.html',
+  providers: [
+    PacienteProvider
+  ]
 })
 export class CadastroContaPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams,
+    public alertCtrl: AlertController,
+    private pacienteProvider: PacienteProvider) {
   }
 
   ionViewDidLoad() {
@@ -23,18 +31,39 @@ export class CadastroContaPage {
   }
 
  
+  
+
+  alertSucesso() {
+        let alert = this.alertCtrl.create({
+          title: 'OK!',
+          subTitle: 'Seu Cadastro foi realizado com sucesso!',
+          buttons: ['OK']
+        });
+        alert.present();
+      }
+
+
+      onSubmit() {
+        console.log('submitting form');
+      }
+
+  paciente = {
+    nome: '',
+    email: '',
+    telefone: '',
+    dataNascimento: '',
+    senha: '',
+    confirmarSenha: ''
+  };
+
+
   cadastrar() {
-
-
-
-    
-    let alert = this.alertCtrl.create({
-      title: 'OK!!',
-      subTitle: 'Seu Cadastro foi realizado com sucesso!',
-      buttons: ['OK']
+    this.pacienteProvider.cadastrarPaciente(this.paciente).subscribe(() =>{
     });
-    alert.present();
+    
+    this.navCtrl.push(LoginPage)
+    this.alertSucesso();
+    console.log(this.paciente)
   }
- 
 
 }

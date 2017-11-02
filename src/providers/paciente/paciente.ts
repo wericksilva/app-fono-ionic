@@ -13,8 +13,23 @@ export class PacienteProvider {
 
   private baseApiPath = "http://localhost:8080/pacientes/"
 
+  private loginApiPath = "http://localhost:8080/pacientes/login/"
+
   constructor(public http: Http) {
     console.log('Hello PacienteProvider Provider');
+  }
+
+
+  cadastrarPaciente(paciente: any) {
+
+    return this.http.post(this.baseApiPath, paciente);
+
+  }
+
+  loginPaciente(paciente: any) {
+
+    return this.http.post(this.loginApiPath, paciente);
+
   }
 
   getTodosPacientes() {
@@ -22,7 +37,7 @@ export class PacienteProvider {
   }
 
 
-  getApiKey(): string { 
+  getApiKey(): string {
     return "a2d9a311303a736feb7c73c45d26994f";
   }
 

@@ -13,31 +13,29 @@
 </ion-header>
 
 
-<ion-content padding  >
+<ion-content padding>
 
 
 
-  <div class="jumbotron, cabecalho_login">
-    <h1 class="display-3">Ola, seja Bem vindo!</h1>
-    <p class="lead">Esse app e para você praticar as atividades da fono</p>
-    <hr class="my-4">
-  </div>
 
-  <ion-list class="form_login" >
 
+  <form (ngSubmit)="vaiParatabPage()">
 
     <ion-item>
-      <ion-input type="text" placeholder="usuário"></ion-input>
+      <ion-input type="text" [(ngModel)]="paciente.email" name="email" placeholder="email"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-input type="password" placeholder="senha"></ion-input>
+      <ion-input type="password" [(ngModel)]="paciente.senha" name="senha" placeholder="senha"></ion-input>
     </ion-item>
 
-    <button ion-button full (click)="vaiParatabPage()">Fazer login</button>
-    <ion-label>Ainda não tem uma conta?</ion-label>
-    <a (click)="vaiParaCadastro()">Criar conta</a>
-  </ion-list>
+    <button ion-button type="submit" block>Login</button>
+  </form>
 
-  
+  <ion-label>Ainda não tem uma conta?</ion-label>
+  <a (click)="vaiParaCadastro()">Criar conta</a>
+
+
+
+
 </ion-content>

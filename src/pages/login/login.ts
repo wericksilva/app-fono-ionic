@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
 import { CadastroContaPage } from '../cadastro-conta/cadastro-conta';
+import { PacienteProvider } from '../../providers/paciente/paciente';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the LoginPage page.
@@ -14,10 +16,13 @@ import { CadastroContaPage } from '../cadastro-conta/cadastro-conta';
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
+  providers: [
+    PacienteProvider
+  ]
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,  private pacienteProvider: PacienteProvider) {
   }
 
   ionViewDidLoad() {
@@ -26,10 +31,25 @@ export class LoginPage {
 
 
   vaiParatabPage(){
-        this.navCtrl.push(TabsPage)
+    this.loginPaciente();
+    this.navCtrl.push(HomePage,this.paciente)
   }
   
   vaiParaCadastro(){
-    this.navCtrl.push(CadastroContaPage)
+    this.navCtrl.push(CadastroContaPage);
 }
+
+paciente = {
+  email: '',
+  senha: ''
+};
+
+
+  loginPaciente() {
+    this.pacienteProvider.loginPaciente(this.paciente).subscribe(() =>{
+  });
+  console.log(this.paciente)
+}
+
+
 }

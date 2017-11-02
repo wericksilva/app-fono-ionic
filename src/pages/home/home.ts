@@ -23,17 +23,31 @@ export class HomePage {
     private pacienteProvider: PacienteProvider) {
 
   }
+
+  public pacienteLogado = {
+
+    email: '',
+    senha: ''
+  };
   
- ionViewDidLoad() {
-    this.pacienteProvider.getTodosPacientes().subscribe(data=>{
+ ionViewDidLoad(paciente: any) {
+  this.pacienteLogado = paciente;
+
+
+
+
+
+
+
+   /* this.pacienteProvider.getTodosPacientes().subscribe(data=>{
       const response = (data as any);
-      const objeto_retorno = JSON.parse(response._body);
+     const objeto_retorno = JSON.parse(response._body);
       this.lista_pacientes = objeto_retorno;
       console.log(objeto_retorno);
     }, error =>{
       console.log(error);
     })
-
+*/
 
 
   }
