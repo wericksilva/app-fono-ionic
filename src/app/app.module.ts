@@ -12,25 +12,31 @@ import { LoginPageModule } from '../pages/login/login.module';
 import { CadastroContaPageModule } from '../pages/cadastro-conta/cadastro-conta.module';
 import { PacienteProvider } from '../providers/paciente/paciente';
 import { HttpModule } from '@angular/http';
+import { AtividadePage } from '../pages/atividade/atividade';
+import { IonicAudioModule } from 'ionic-audio';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    TabsPage
+    AtividadePage,
+    TabsPage,
+    
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     LoginPageModule,
     CadastroContaPageModule,
-    HttpModule
+    HttpModule,
+    IonicAudioModule.forRoot()
     
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,  
     HomePage,
+    AtividadePage,
     TabsPage
   ],
   providers: [

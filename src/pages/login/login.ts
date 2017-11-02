@@ -32,7 +32,7 @@ export class LoginPage {
 
   vaiParatabPage(){
     this.loginPaciente();
-    this.navCtrl.push(HomePage,this.paciente)
+    this.navCtrl.push(TabsPage,this.paciente)
   }
   
   vaiParaCadastro(){
