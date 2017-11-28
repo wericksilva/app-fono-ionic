@@ -14,6 +14,7 @@ import { PacienteProvider } from '../providers/paciente/paciente';
 import { HttpModule } from '@angular/http';
 import { AtividadePage } from '../pages/atividade/atividade';
 import { IonicAudioModule } from 'ionic-audio';
+import { Camera } from '@ionic-native/camera';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { IonicAudioModule } from 'ionic-audio';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    PacienteProvider
+    PacienteProvider,
+    Camera
   ]
 })
 export class AppModule {}
